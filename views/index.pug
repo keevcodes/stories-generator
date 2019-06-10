@@ -4,4 +4,7 @@ block content
   h1= title
   p Welcome to #{title}
 
+  form(action='/' method="post")
+    button(name="download" value="download") download
+
   a(href="/users") Users
