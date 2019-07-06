@@ -7,6 +7,6 @@ block content
   form(action='/' method="post")
     button(name="download" value="download") download
 
-  .drop-zone
+  .drop-zone(ondragover='dragoverHandler(event)' ondrop='dropHandler(event)') drop-zone
 
   a(href="/users") Users
