@@ -1,6 +1,7 @@
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
+let cors = require('cors');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
@@ -13,7 +14,9 @@ let app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// enables all CORS requests if needed
 app.use(cors({credentials: true, origin: true}));
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
