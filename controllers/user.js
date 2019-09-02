@@ -1,6 +1,6 @@
-const { validationResult } = require('express-validator/check');
+const { validationResult } = require('express-validator');
 
-exports.userLogin = ((req, res, next) => {
+exports.userLogin = ((req, res) => {
 
   const errors = validationResult(req);
 
