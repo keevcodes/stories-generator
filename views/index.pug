@@ -3,10 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  p #{media}
 
-  form(action='/' method="post")
-    button(name="download" value="download") download
+  form(action='/' method="post" class="drop-zone" id="dropForm")
+    label(for="drag_drop") drop your images here
+    input(type="file" accept="image/png, image/jpeg," id="drag_drop" name="drag_drop" class="drag-drop-btn" multiple oninput="dropHandler()")
 
-  .drop-zone(ondragover='dragoverHandler(event)' ondrop='dropHandler(event)') drop-zone
 
   a(href="/users") Users
+
+  a(href="/download") Download
