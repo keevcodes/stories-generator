@@ -3,11 +3,16 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  p #{media}
 
   form(action='/' method="post" class="drop-zone" id="dropForm")
-    label(for="drag_drop") drop your images here
-    input(type="file" accept="image/png, image/jpeg," id="drag_drop" name="drag_drop" class="drag-drop-btn" multiple oninput="dropHandler()")
+    input(type="file"
+    accept="image/png, image/jpeg,"
+    id="media"
+    name="media"
+    class="drag-drop drag-drop-btn"
+    multiple oninput="dropHandler()")
+
+    label(for="media" class="drag-drop drag-drop-field") drop files here or click to open folder
 
 
   a(href="/users") Users
