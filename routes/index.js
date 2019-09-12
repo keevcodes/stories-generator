@@ -4,7 +4,7 @@ const drag_controller = require('../controllers/drag');
 
 /** GET home page. */
 indexRouter.get('/', (req, res, next) => {
-  res.render('index', { title: 'StoriesLab.io' });
+  res.render('index.pug', { title: 'StoriesLab.io' });
 });
 
 indexRouter.post('/', drag_controller.drag);
