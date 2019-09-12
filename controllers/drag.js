@@ -26,19 +26,17 @@ exports.drag = (req, res, next) => {
    */
   const ampHtml = template(JSON.parse(stringified));
 
-  fs.writeFile('./amp-story.html', ampHtml, (err) => {
+  fs.writeFile('./views/amp-story.html', ampHtml, (err) => {
     if (err) {
       console.log('error writing story.html file', err)
     } else {
       console.log('success writing story.html')
+      res.download('./views/amp-story.html', (err) => {
+        if(err) {
+          console.log(err);
+        }
+      })
     }
   });
 
-  res.download('./amp-story.html', (err) => {
-    if(err) {
-      console.log('error in downloading amp story')
-    } else {
-      console.log('downloading amp story')
-    }
-  });
 };
