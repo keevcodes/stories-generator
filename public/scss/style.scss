@@ -1,1 +1,12 @@
-@import 'atoms/drop'
+@import 'atoms/drop';
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 20px;
+
+  @media (min-width: 768px) {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+}
