@@ -4,15 +4,19 @@ let path = require('path');
 let cors = require('cors');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let engines = require('consolidate');
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+let storyRouter = require('./routes/story');
 
 let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.engine('html', engines.pug);
+app.set('view engine', 'html');
+
 
 // enables all CORS requests if needed
 app.use(cors({credentials: true, origin: true}));
@@ -27,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use(usersRouter);
+app.use(storyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
