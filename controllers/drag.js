@@ -2,7 +2,7 @@ const fs = require('fs');
 const Pug = require('pug');
 
 
-const source = './views/download.pug';
+const source = './views/story-content.pug';
 const template = Pug.compileFile(source);
 
 exports.drag = (req, res, next) => {

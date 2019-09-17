@@ -1,0 +1,18 @@
+extends amp-layout
+
+block content
+  amp-story(
+    standalone
+    title="Your AMP story"
+    publisher="Dummy Publisher"
+    publisher-logo-src="assets/Dummy-Icon.svg"
+    poster-portrait-src="assets/dummy-cover.jpg"
+    )
+    each item, index in media
+      amp-story-page(id=index)
+        amp-story-grid-layer(template="fill")
+          amp-img(
+            src=item
+            width="720" height="1280"
+            layout="responsive"
+          )
